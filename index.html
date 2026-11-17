@@ -1,135 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wyrix – Apps made to feel good</title>
-<meta name="description" content="Wyrix builds simple, beautiful Android apps: Wallpaper HD 4K, Wyrix News and Wyrix Browser.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<title>Wyrix Developers – Android app and website development services</title>
+<meta name="description" content="Wyrix Developers builds custom Android apps and websites for individuals and small businesses in India. Get a free quote.">
 <style>
-:root{--bg:#f3f5fb;--ink:#0f1630;--mute:#5b6480;--blue:#3b4cff;--coral:#ff6a4d;--card:#fff;--line:#e2e6f2}
-*{box-sizing:border-box;margin:0}
+:root{--bg:#f7f9fb;--card:#fff;--ink:#14212b;--mute:#52636f;--line:#dbe3e9;--accent:#0b6e6e;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1a21;--card:#16252e;--ink:#e8eff3;--mute:#9fb2bf;--line:#26394400;--line:#263944;--accent:#46c2b8;--accent-ink:#06201e}}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font:17px/1.6 "DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
-h1,h2,h3,.logo{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-.logo{font-weight:800;font-size:26px;text-decoration:none}
-.logo i{font-style:normal;color:var(--coral)}
-nav a.l{margin-left:24px;text-decoration:none;color:var(--mute);font-weight:500}
-nav a.l:hover{color:var(--ink)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 90px}
-h1{font-size:clamp(42px,7vw,76px);font-weight:800}
-.hero p{max-width:30em;margin:22px 0 32px;color:var(--mute);font-size:19px}
-.btn{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:500;transition:transform .2s,background .2s}
-.btn:hover{background:var(--blue);transform:translateY(-2px)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-left:10px}
-.btn.ghost:hover{background:var(--ink);color:#fff}
-.stage{position:relative;height:480px;display:flex;justify-content:center}
-.phone{position:relative;width:240px;height:480px;border-radius:38px;background:#0b1024;padding:10px;box-shadow:0 40px 70px -20px rgba(15,22,48,.45);z-index:2;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
-.screen{height:100%;border-radius:30px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;background:#161d3a}
-.screen b{border-radius:14px;display:block}
-.screen b:nth-child(1){background:linear-gradient(160deg,#ff6a4d,#7a2bff);grid-row:span 2}
-.screen b:nth-child(2){background:linear-gradient(160deg,#18d4c2,#3b4cff)}
-.screen b:nth-child(3){background:linear-gradient(160deg,#ffd45e,#ff6a4d)}
-.screen b:nth-child(4){background:linear-gradient(160deg,#3b4cff,#0f1630);grid-row:span 2}
-.screen b:nth-child(5){background:linear-gradient(160deg,#ff8fb1,#ffb86b)}
-.screen b:nth-child(6){background:linear-gradient(160deg,#6ee7a8,#0e7c86)}
-.tilt{position:absolute;width:200px;height:400px;border-radius:32px;top:50px;opacity:.9}
-.tilt.a{background:linear-gradient(160deg,#3b4cff,#18d4c2);left:2%;transform:rotate(-9deg)}
-.tilt.b{background:linear-gradient(160deg,#ff6a4d,#ffd45e);right:2%;transform:rotate(9deg)}
-@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
-section{padding:70px 0}
-h2{font-size:clamp(32px,4.5vw,48px);font-weight:800;margin-bottom:36px}
-.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.app{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:14px}
-.app .ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font:800 26px "Bricolage Grotesque",sans-serif;color:#fff}
-.app.w .ico{background:linear-gradient(140deg,#ff6a4d,#7a2bff)}
-.app.n .ico{background:linear-gradient(140deg,#3b4cff,#18d4c2)}
-.app.b .ico{background:linear-gradient(140deg,#0f1630,#3b4cff)}
-.app h3{font-size:28px}
-.app p{color:var(--mute)}
-.app ul{padding-left:20px;color:var(--mute)}
-.app .row{margin-top:auto;padding-top:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.app .row a.t{color:var(--mute);font-size:15px}
-.soon{font-size:15px;color:var(--mute);border:1px dashed var(--line);padding:10px 18px;border-radius:999px}
-.band{background:var(--ink);color:#fff;border-radius:32px;padding:46px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-.band p{color:#b9c0dd;max-width:34em;margin-top:10px}
-.band .btn{background:#fff;color:var(--ink)}
-.band .btn:hover{background:var(--coral);color:#fff}
-footer{padding:50px 0 40px;color:var(--mute);font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-@media(max-width:820px){.hero,.apps,.band{grid-template-columns:1fr}.stage{height:440px}.btn.ghost{margin:10px 0 0}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--accent)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+header .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.logo{font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+nav a{color:var(--mute);text-decoration:none;font-size:15px}
+nav a:hover,nav a:focus{color:var(--accent)}
+.hero{padding:56px 0 40px}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.15;margin:0 0 14px;letter-spacing:-.02em}
+.hero p{font-size:18px;color:var(--mute);max-width:620px;margin:0 0 24px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent);margin-left:8px}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-size:26px;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p,.card li{color:var(--mute);margin:6px 0}
+.card ul{padding-left:18px;margin:8px 0 0}
+.price{font-weight:700;color:var(--ink)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:14px;color:var(--mute)}
+.scroll{overflow-x:auto}
+.legal h3{margin:22px 0 4px;font-size:17px}
+.legal p,.legal li{color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mute);font-size:14px}
+footer a{margin-right:14px}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
+
+<header>
 <div class="wrap">
-  <nav>
-    <a class="logo" href="#">Wyrix<i>.</i></a>
-    <div><a class="l" href="#apps">Apps</a><a class="l" href="#privacy">Privacy</a></div>
-  </nav>
-
-  <header class="hero">
-    <div>
-      <h1>Small apps. Big on polish.</h1>
-      <p>Wyrix makes Android apps that are fast, clean and a pleasure to use every day: stunning wallpapers, a clean news reader and a fast browser.</p>
-      <a class="btn" href="#apps">See our apps</a>
-      <a class="btn ghost" href="#privacy">Privacy policy</a>
-    </div>
-    <div class="stage" aria-hidden="true">
-      <div class="tilt a"></div><div class="tilt b"></div>
-      <div class="phone"><div class="screen"><b></b><b></b><b></b><b></b><b></b><b></b></div></div>
-    </div>
-  </header>
-
-  <section id="apps">
-    <h2>Our apps</h2>
-    <div class="apps">
-      <article class="app w">
-        <div class="ico" aria-hidden="true">W</div>
-        <h3>Wallpaper HD 4K</h3>
-        <p>Give your phone a new look in a tap. Browse sharp, high-resolution wallpapers and set your favourite in seconds.</p>
-        <ul><li>HD and 4K quality</li><li>Easy browsing by category</li><li>One-tap set as wallpaper</li></ul>
-        <div class="row">
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.wyrix.wallpaper" target="_blank" rel="noopener">Get it on Google Play</a>
-          <a class="t" href="/wyrix-privacy/wallpaper/">Privacy policy</a>
-        </div>
-      </article>
-      <article class="app n">
-        <div class="ico" aria-hidden="true">N</div>
-        <h3>Wyrix News</h3>
-        <p>Stay up to date with a fast, simple reader that puts the headlines first and the noise last.</p>
-        <ul><li>Clean, distraction-free reading</li><li>Quick, lightweight loading</li><li>Latest stories in one place</li></ul>
-        <div class="row"><span class="soon">Coming soon to Google Play</span></div>
-      </article>
-      <article class="app b">
-        <div class="ico" aria-hidden="true">B</div>
-        <h3>Wyrix Browser</h3>
-        <p>A lightweight browser built for speed, so pages open quickly and browsing stays smooth.</p>
-        <ul><li>Fast page loading</li><li>Simple, clutter-free design</li><li>Easy to use on any phone</li></ul>
-        <div class="row"><span class="soon">Coming soon to Google Play</span></div>
-      </article>
-    </div>
-  </section>
-
-  <section id="privacy">
-    <div class="band">
-      <div>
-        <h2 style="margin:0;font-size:clamp(28px,4vw,40px)">Your privacy matters</h2>
-        <p>Read how each Wyrix app handles your data, in plain language.</p>
-      </div>
-      <a class="btn" href="/wyrix-privacy/wallpaper/">Wallpaper HD 4K policy</a>
-    </div>
-  </section>
-
-  <footer>
-    <span>© 2026 Wyrix. All rights reserved.</span>
-    <span>Made for Android</span>
-  </footer>
+<a class="logo" href="#top">Wyrix Developers</a>
+<nav aria-label="Main">
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#apps">Our apps</a>
+<a href="#contact">Contact</a>
+<a href="#privacy">Privacy</a>
+<a href="#terms">Terms</a>
+<a href="#refund">Refunds</a>
+</nav>
 </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+<div class="hero">
+<h1>Android apps and websites, built for your business.</h1>
+<p>Wyrix Developers is a small development studio in Delhi, India. We design and build custom Android apps and websites for individuals and small businesses, and we have published our own apps on Google Play.</p>
+<a class="btn" href="#contact">Get a free quote</a><a class="btn alt" href="#services">See services</a>
+</div>
+
+<section id="services">
+<h2>Services</h2>
+<p class="sub">What we build for clients.</p>
+<div class="grid">
+<div class="card">
+<h3>Android app development</h3>
+<p>Custom Android apps from idea to Google Play publishing.</p>
+<ul><li>UI design and development</li><li>API and backend integration</li><li>Play Console setup and release</li></ul>
+</div>
+<div class="card">
+<h3>Website development</h3>
+<p>Fast, mobile-friendly websites for businesses, portfolios and online stores.</p>
+<ul><li>Responsive design</li><li>Contact forms and basic SEO</li><li>Hosting and domain setup help</li></ul>
+</div>
+<div class="card">
+<h3>Maintenance and updates</h3>
+<p>Bug fixes, new features and version updates for apps and websites we have built.</p>
+<ul><li>Monthly or one-time support</li><li>Performance improvements</li></ul>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<p class="sub">Every project is priced by scope. All prices are in Indian Rupees (INR) and exclude taxes if applicable.</p>
+<div class="scroll">
+<table>
+<thead><tr><th>Service</th><th>Starting price</th><th>Typical delivery</th></tr></thead>
+<tbody>
+<tr><td>Basic website (up to 5 pages)</td><td class="price">₹4,999</td><td>5–10 days</td></tr>
+<tr><td>Business website with custom features</td><td class="price">₹14,999</td><td>2–4 weeks</td></tr>
+<tr><td>Simple Android app</td><td class="price">₹14,999</td><td>2–4 weeks</td></tr>
+<tr><td>Custom Android app with backend</td><td class="price">₹39,999</td><td>4–8 weeks</td></tr>
+<tr><td>Maintenance and updates</td><td class="price">₹1,999 / month</td><td>Ongoing</td></tr>
+</tbody>
+</table>
+</div>
+<p class="sub" style="margin-top:12px">Final price is confirmed in writing before work starts. Payments are accepted online through Razorpay (UPI, cards, net banking, wallets).</p>
+</section>
+
+<section id="apps">
+<h2>Our apps</h2>
+<p class="sub">Apps we have built and published ourselves.</p>
+<div class="grid">
+<div class="card">
+<h3>Wallpaper HD 4K</h3>
+<p>Browse sharp HD and 4K wallpapers by category and set one in a tap.</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.wyrix.wallpaper">Get it on Google Play</a><br><a href="https://oxclub.github.io/wyrix-privacy/wallpaper/">Privacy policy</a></p>
+</div>
+<div class="card">
+<h3>Wyrix News</h3>
+<p>A fast, simple news reader that puts headlines first.</p>
+<p>Coming soon to Google Play</p>
+</div>
+<div class="card">
+<h3>Wyrix Browser</h3>
+<p>A lightweight browser built for speed and a clutter-free experience.</p>
+<p>Coming soon to Google Play</p>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact us</h2>
+<p class="sub">Tell us what you want to build and we will reply with a quote, usually within 1–2 business days.</p>
+<div class="card">
+<p><strong>Business name:</strong> Wyrix Developers (proprietorship)</p>
+<p><strong>Owner:</strong> Rahul Kumar Singh</p>
+<p><strong>Email:</strong> <a href="mailto:wyrixdevelopers@gmail.com">wyrixdevelopers@gmail.com</a></p>
+<p><strong>Phone:</strong> <a href="tel:+916299076345">+91 62990 76345</a></p>
+<p><strong>Address:</strong> Pithala Village, North West Delhi, Delhi – 110081, India</p>
+<p><strong>Support hours:</strong> Monday to Saturday, 10:00 AM – 7:00 PM IST</p>
+</div>
+</section>
+
+<section id="privacy" class="legal">
+<h2>Privacy policy</h2>
+<p class="sub">Last updated: 17 November 2026</p>
+<h3>Information we collect</h3>
+<p>When you contact us or buy a service, we collect your name, email address, phone number and project details. Payments are processed by Razorpay; we do not store your card, UPI or bank details.</p>
+<h3>How we use it</h3>
+<p>We use this information to reply to enquiries, deliver the services you order, send invoices and provide support. We do not sell your information.</p>
+<h3>Sharing</h3>
+<p>We share data only with service providers needed to deliver the service (such as Razorpay for payments) or when required by law.</p>
+<h3>Your choices</h3>
+<p>You can ask us to correct or delete your information by emailing wyrixdevelopers@gmail.com.</p>
+<h3>App privacy</h3>
+<p>Each of our apps has its own policy, for example <a href="https://oxclub.github.io/wyrix-privacy/wallpaper/">Wallpaper HD 4K</a>.</p>
+</section>
+
+<section id="terms" class="legal">
+<h2>Terms and conditions</h2>
+<p class="sub">Last updated: 17 November 2026</p>
+<h3>Services</h3>
+<p>Wyrix Developers provides Android app and website development and related maintenance services. The scope, price and timeline of each project are agreed in writing (email or message) before work begins.</p>
+<h3>Payments</h3>
+<p>Prices are in INR. Projects normally start with an advance payment, with the balance due on delivery. Payments are made online through Razorpay.</p>
+<h3>Client responsibilities</h3>
+<p>You agree to provide content, access and feedback on time. Delays on your side may extend the delivery date.</p>
+<h3>Ownership</h3>
+<p>After full payment, you own the final deliverables made specifically for you. We may keep our own tools, libraries and reusable code.</p>
+<h3>Limitation of liability</h3>
+<p>We are not liable for indirect losses, or for issues caused by third-party services such as hosting, app stores or payment providers.</p>
+<h3>Governing law</h3>
+<p>These terms are governed by the laws of India. Disputes are subject to the courts of Delhi.</p>
+</section>
+
+<section id="refund" class="legal">
+<h2>Refund and cancellation policy</h2>
+<p class="sub">Last updated: 17 November 2026</p>
+<ul>
+<li><strong>Before work starts:</strong> you can cancel and get a full refund of your advance within 3 days of payment.</li>
+<li><strong>After work has started:</strong> we refund the advance minus the cost of work already completed, based on the agreed milestones.</li>
+<li><strong>After delivery:</strong> digital work that has been delivered and accepted is not refundable. We will fix bugs and defects in the agreed scope free of charge for 15 days after delivery.</li>
+<li><strong>If we cannot deliver:</strong> if we are unable to complete the agreed work, you get a full refund for the undelivered part.</li>
+<li><strong>How to request:</strong> email wyrixdevelopers@gmail.com with your order details. Approved refunds are returned to the original payment method within 5–7 business days.</li>
+</ul>
+<h3>Delivery</h3>
+<p>All services are delivered digitally (source files, app builds, website access or Play Console release). No physical goods are shipped.</p>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<a href="#privacy">Privacy policy</a><a href="#terms">Terms and conditions</a><a href="#refund">Refund policy</a><a href="#contact">Contact</a>
+<p>© 2026 Wyrix Developers. Delhi, India.</p>
+</div>
+</footer>
+
 </body>
 </html>
